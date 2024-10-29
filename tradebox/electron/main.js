@@ -5,15 +5,15 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1100,
+    height: 800,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
   });
 
-  mainWindow.loadURL(`file://${path.join(__dirname, '../dist/tradebox/index.html')}`);
+  mainWindow.loadURL(`file://${path.join(__dirname, '../dist/tradebox/browser/index.html')}`);
 
   mainWindow.on('closed', function () {
     mainWindow = null;

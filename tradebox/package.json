@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve:ssr:tradebox": "node dist/tradebox/server/server.mjs",
     "electron": "ng build && electron ./electron/main.js",
-    "electron:dev": "ng build --watch & electron ./electron/main.js"
+    "electron:dev": "ng build --watch & electron ./electron/main.js",
+    "package": "electron-packager ./dist/tradebox TradeBox --platform=darwin --arch=universal"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "electron": "^33.0.2",
+    "electron-packager": "^17.1.2",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

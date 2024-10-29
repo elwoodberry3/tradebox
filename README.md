@@ -41,9 +41,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL(
-    `file://${path.join(__dirname, '../dist/angular-electron-app/index.html')}`
-  );
+  mainWindow.loadURL(`file://${path.join(__dirname, '../dist/tradebox/index.html')}`);
 
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -63,6 +61,7 @@ app.on('activate', function () {
     createWindow();
   }
 });
+
 
 ```   
 
@@ -85,8 +84,24 @@ Angular.json
 "outputPath": "dist/tradebox",
 ```  
 
+Run Application  
+```
+npm run electron  
+```  
+  
 Install Packager  
 ```
 npm install --save-dev electron-packager  
 ```  
   
+Update the package.json  
+```json  
+  "scripts": {
+    "package": "electron-packager ./dist/tradebox TradeBox --platform=darwin --arch=universal"
+  },
+```  
+
+Package the application.
+```
+npm run package  
+```  
